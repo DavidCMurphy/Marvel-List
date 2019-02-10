@@ -26,4 +26,8 @@ class ListViewModel: ListModelProtocol {
         cell.characterImageView.setRemoteImageWithAnimation(url: item.thumbnail.image_url)
         cell.characterName.text = item.name
     }
+    
+    func cellSelected(_ item: Item) -> UIViewController {
+        return CharacterDetailController( DetailViewModel( item ) )
+    }
 }

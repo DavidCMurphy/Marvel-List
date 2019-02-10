@@ -9,7 +9,7 @@
 import UIKit
 
 
-class CharacterListController<T, V, K: UITableViewCell>: UIViewController, UITableViewDataSource {
+class CharacterListController<T, V, K: UITableViewCell>: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     let table = UITableView()
     let refresh = UIRefreshControl()
@@ -31,6 +31,7 @@ class CharacterListController<T, V, K: UITableViewCell>: UIViewController, UITab
         
         title = model.title
         
+        table.delegate = self
         table.dataSource = self
         
         // rough guess of cell height for the purposes of optimization
@@ -62,6 +63,13 @@ class CharacterListController<T, V, K: UITableViewCell>: UIViewController, UITab
     
     @objc func reloadResults() {
         model.reload()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let results = model.results() {
+            navigationController?
+                .pushViewController( model.cellSelected( results[indexPath.row] ) , animated: true)
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

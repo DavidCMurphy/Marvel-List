@@ -20,6 +20,7 @@ protocol ListModelProtocol: class {
     
     func results() -> [Item]?
     func configureCell( _ cell: Cell, _ item: Item )
+    func cellSelected( _ item: Item ) -> UIViewController
 }
 
 class AnyListModel<Base, Item, Cell: UITableViewCell>: ListModelProtocol {
@@ -30,6 +31,7 @@ class AnyListModel<Base, Item, Cell: UITableViewCell>: ListModelProtocol {
     
     let resultsClosure: () -> [Item]?
     let cellClosure: (Cell, Item) -> Void
+    let selectClosure: (Item) -> UIViewController
     
     let urlString: String
     let fetchable: AnyFetch<Base>
@@ -41,6 +43,7 @@ class AnyListModel<Base, Item, Cell: UITableViewCell>: ListModelProtocol {
         resultsClosure = model.results
         loading = model.loading
         cellClosure = model.configureCell
+        selectClosure = model.cellSelected
         fetchable = AnyFetch( fetch )
         urlString = url
     }
@@ -51,6 +54,10 @@ class AnyListModel<Base, Item, Cell: UITableViewCell>: ListModelProtocol {
     
     func configureCell( _ cell: Cell, _ item: Item) {
         cellClosure( cell, item )
+    }
+
+    func cellSelected( _ item: Item ) -> UIViewController {
+        return selectClosure( item )
     }
     
     func reload() {
