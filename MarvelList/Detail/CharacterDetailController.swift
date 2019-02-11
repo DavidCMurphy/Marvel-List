@@ -64,6 +64,7 @@ class CharacterDetailController: UIViewController {
         descriptionLabel.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 10).isActive = true
         
         imageView.translatesAutoresizingMaskIntoConstraints = false
+        
         imageView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         imageView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         imageView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true

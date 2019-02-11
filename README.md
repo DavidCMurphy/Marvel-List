@@ -17,7 +17,7 @@ You will notice that the controllers and view models used to inject them with da
 
 This flexibility is achieved through [composition rather than inheritance](https://en.wikipedia.org/wiki/Composition_over_inheritance) while still being entirely type safe.
 
-The benefits of this approach can be seen in the testing strategy, to use the same model and controller with a different networking layer we simply have make a new conforming object and dependancy inject it.
+The benefits of this approach can be seen in the testing strategy, to use the same model and controller with a different networking layer we simply have make a new conforming object and dependency inject it.
 
 ```swift
 struct MockFetchResponse: FetchProtocol {
