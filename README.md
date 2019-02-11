@@ -53,7 +53,7 @@ Breaking down the controllers through protocols would make mocking UI functional
 
 The routing could be made to conform to the Model view Coordinator pattern.
 
-![](https://media.giphy.com/media/YiAgKeS1AVR6AYfjEI/giphy.gif)
+![Example](https://github.com/DavidCMurphy/Marvel-List/blob/master/example.gif)
 
 ## Requirements
 
