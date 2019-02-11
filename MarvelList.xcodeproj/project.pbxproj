@@ -112,9 +112,7 @@
 			children = (
 				7913232D221097B900A7C98A /* AppDelegate.swift */,
 				791323542210980000A7C98A /* Models.swift */,
-				791323702210AE8800A7C98A /* Dynamic.swift */,
-				7913236E2210ADFA00A7C98A /* Utility.swift */,
-				791323722210AF3A00A7C98A /* ImageCache.swift */,
+				79132382221101F900A7C98A /* Utility */,
 				791323742210BF2000A7C98A /* Detail */,
 				791323602210ADB600A7C98A /* List */,
 				7913234D221097D400A7C98A /* Network */,
@@ -187,8 +185,8 @@
 		791323752210BF2000A7C98A /* DetailModel */ = {
 			isa = PBXGroup;
 			children = (
-				791323762210BF2000A7C98A /* DetailViewModel.swift */,
 				791323772210BF2000A7C98A /* DetailModel.swift */,
+				791323762210BF2000A7C98A /* DetailViewModel.swift */,
 			);
 			path = DetailModel;
 			sourceTree = "<group>";
@@ -207,6 +205,16 @@
 				791323802211015700A7C98A /* DetailTests.swift */,
 			);
 			path = Detail;
+			sourceTree = "<group>";
+		};
+		79132382221101F900A7C98A /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				791323702210AE8800A7C98A /* Dynamic.swift */,
+				7913236E2210ADFA00A7C98A /* Utility.swift */,
+				791323722210AF3A00A7C98A /* ImageCache.swift */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
