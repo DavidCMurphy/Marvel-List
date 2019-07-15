@@ -33,28 +33,6 @@ let controller = CharacterListController( "TestResponse", ListViewModel(), MockF
 
 ```
 
-## What are the drawbacks?
-
-All this does require a fair bit of thought, if you dont adequately scope functions that accept a protocol with an associated type you might run into.
-
-> error: protocol 'Cachable' can only be used as a generic constraint because it has Self or associated type requirements
-
-Or if you want to store an instance of that conforming object. To get around you will see a few instances of a concept known as [type erasure](https://medium.com/swiftworld/swift-world-type-erasure-5b720bc0318a).
-
-While a bit of boilerplate i feel the benefits outweigh the drawbacks here.
-
-## What improvements can i make?
-
-I would love to use a proper binding library for the view models instead of the Dynamic class which is a very simple abstraction on Swift 4 property observers with closures, i only implemented one to one bindings because it was only needed in this case.
-
-I could go more crazy with protocols, the controllers could be alot more flexible by applying the same principles, an example would be possibly adding the refresh control on the ListController through a protocol.
-
-Breaking down the controllers through protocols would make mocking UI functionality possible.
-
-The routing could be made to conform to the Model view Coordinator pattern.
-
-![Example](https://github.com/DavidCMurphy/Marvel-List/blob/master/example.gif)
-
 ## Requirements
 
 - iOS 10.0+
