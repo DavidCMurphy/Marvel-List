@@ -1,7 +1,7 @@
 Marvel List
 ==========================
 
-A simple application that queries the [marvel api](https://developer.marvel.com/) for a list of marvel characters, displays them and allow the user to select a character to select one and view their details.
+A simple application that queries the [marvel api](https://developer.marvel.com/) for a list of marvel characters, displays them and allow the user to select a character and view their details.
 
 This application was built using the MVVM architecture with no third party frameworks. The goal here was to use generics and protocols to keep the bulk of the code free from concrete types and thus more reusable.
 
